@@ -1,0 +1,7 @@
+[environments.dev]
+url = "jdbc:mysql://localhost:3306/accounting_lite"
+user = "accounting_lite_user"
+password = ""
+
+[flyway]
+locations = ["classpath:src/main/resources/db/migrations"]
