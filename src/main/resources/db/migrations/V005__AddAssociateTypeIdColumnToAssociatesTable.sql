@@ -1,0 +1,3 @@
+BEGIN;
+    ALTER TABLE associates ADD COLUMN associate_type_id BIGINT UNSIGNED NOT NULL AFTER id;
+COMMIT;
