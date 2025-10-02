@@ -1,4 +1,4 @@
-package dev.handballgoalkeeper.accountinglite.repositories.abstractions;
+package dev.handballgoalkeeper.accountinglite.repositories;
 
 import dev.handballgoalkeeper.accountinglite.models.AssociateTypeModel;
 import org.springframework.data.jpa.repository.JpaRepository;

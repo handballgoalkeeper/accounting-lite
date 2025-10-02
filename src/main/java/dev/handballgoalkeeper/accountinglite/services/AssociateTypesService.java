@@ -3,7 +3,7 @@ package dev.handballgoalkeeper.accountinglite.services;
 import dev.handballgoalkeeper.accountinglite.DTOs.associatetype.AssociateTypeDTO;
 import dev.handballgoalkeeper.accountinglite.DTOs.responses.PaginatedResponseDTO;
 import dev.handballgoalkeeper.accountinglite.mappers.AssociateTypeMapper;
-import dev.handballgoalkeeper.accountinglite.repositories.abstractions.AssociateTypeRepository;
+import dev.handballgoalkeeper.accountinglite.repositories.AssociateTypeRepository;
 import dev.handballgoalkeeper.accountinglite.services.abstractions.AssociateTypesServiceInterface;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
