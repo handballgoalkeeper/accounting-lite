@@ -2,6 +2,8 @@ package dev.handballgoalkeeper.accountinglite.exceptions.handlers;
 
 import dev.handballgoalkeeper.accountinglite.DTOs.responses.ErrorResponseDTO;
 import dev.handballgoalkeeper.accountinglite.enums.ErrorMessage;
+import dev.handballgoalkeeper.accountinglite.exceptions.AlreadyExistsException;
+import dev.handballgoalkeeper.accountinglite.exceptions.NotFoundException;
 import dev.handballgoalkeeper.accountinglite.services.abstractions.ResponseBuilderServiceInterface;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,20 @@ public class GlobalExceptionHandler {
                 errors.put(error.getField(), error.getDefaultMessage()));
 
         return this.responseBuilderService.error(errors, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<ErrorResponseDTO> handleNotFoundExceptions(NotFoundException ex) {
+        var errorMessages = new HashMap<String, String>();
+        errorMessages.put("general", ex.getMessage());
+        return this.responseBuilderService.error(errorMessages, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(AlreadyExistsException.class)
+    public ResponseEntity<ErrorResponseDTO> handleAlreadyExistsExceptions(AlreadyExistsException ex) {
+        var errorMessages = new HashMap<String, String>();
+        errorMessages.put("general", ex.getMessage());
+        return this.responseBuilderService.error(errorMessages, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler(value = Throwable.class)

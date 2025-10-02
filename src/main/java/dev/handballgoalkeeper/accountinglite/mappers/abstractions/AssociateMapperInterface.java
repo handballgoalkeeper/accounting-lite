@@ -1,11 +1,11 @@
 package dev.handballgoalkeeper.accountinglite.mappers.abstractions;
 
-import dev.handballgoalkeeper.accountinglite.DTOs.associatetype.AssociateTypeDTO;
+import dev.handballgoalkeeper.accountinglite.DTOs.associates.AssociateDTO;
+import dev.handballgoalkeeper.accountinglite.models.AssociateModel;
 import dev.handballgoalkeeper.accountinglite.models.AssociateTypeModel;
 
-import java.util.List;
-
 public interface AssociateMapperInterface {
-    AssociateTypeDTO toDTO(AssociateTypeModel model);
-    List<AssociateTypeDTO> toDTOList(List<AssociateTypeModel> models);
+    <T> AssociateModel fromRequest (T request, AssociateTypeModel associateType);
+    AssociateModel toModel (AssociateDTO associateDTO);
+    AssociateDTO toDTO (AssociateModel associateModel);
 }

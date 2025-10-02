@@ -1,14 +1,14 @@
 package dev.handballgoalkeeper.accountinglite.mappers;
 
 import dev.handballgoalkeeper.accountinglite.DTOs.associatetype.AssociateTypeDTO;
-import dev.handballgoalkeeper.accountinglite.mappers.abstractions.AssociateMapperInterface;
+import dev.handballgoalkeeper.accountinglite.mappers.abstractions.AssociateTypeMapperInterface;
 import dev.handballgoalkeeper.accountinglite.models.AssociateTypeModel;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class AssociateTypeMapper implements AssociateMapperInterface {
+public class AssociateTypeMapper implements AssociateTypeMapperInterface {
     @Override
     public AssociateTypeDTO toDTO(AssociateTypeModel model) {
         return AssociateTypeDTO.builder()
